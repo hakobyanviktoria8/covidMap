@@ -1,13 +1,141 @@
 body {
   margin: 0;
+  padding: 0;
+  overflow: hidden;
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
+.container{
+  background-color: #cdcdcd;
+  height: 100vh;
+  padding: 10px;
+  position: relative;
+}
+h1{
+  text-align: center;
+  /*background-color: #4c4c4c;*/
+  color: #4c4c4c;
+  font-size: 35px;
+  padding: 10px;
+  /*border: 1px solid white;*/
+  margin: 5px;
+}
+/*total Confirmed styles*/
+.totalConfirmed{
+  border: 1px solid white;
+  width: 250px;
+  height: 120px;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+}
+h4{
+  margin: 10px;
+}
+#totalConfirmed{
+  font-size: 45px;
+  font-weight: bold;
+}
+/*country Data styles*/
+.countryData{
+  border: 1px solid white;
+  position: absolute;
+  top: 230px;
+  width: 250px;
+  min-height: 120px;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  height: 450px;
+  overflow: auto;
+}
+/*Search Country styles*/
+.searchCountry{
+  border: 1px solid white;
+  width: 800px;
+  height: 50px;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+  left: 290px;
+}
+ul{
+  list-style: none;
+  text-align: left;
+  padding: 5px;
+  line-height: 30px;
+}
+li{
+  border-bottom: 1px solid;
+}
+#inputValue{
+  padding: 10px;
+  font-size: 20px;
+  width: 90%;
+}
+#inputSearch{
+  padding: 10px;
+  font-size: 20px;
+}
+/*grafic styles*/
+.grafic{
+  border: 1px solid white;
+  width: 380px;
+  height: 300px;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  position: absolute;
+  top: 80px;
+  right: 10px;
+}
+/*Search Table style*/
+.searchTable{
+  margin: 0 auto;
+  /*left: 290px;*/
+  /*left: 10px;*/
+  border: 1px solid white;
+  /*width: 800px;*/
+  width: 1000px;
+  /*height: 520px;*/
+  height: 600px;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  /*position: absolute;*/
+  /*top: 160px;*/
+  /*top: 80px;*/
+  overflow-y: auto;
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+}
+table{
+  border: 1px solid white;
+  background-color: white;
+  color: #4c4c4c;
+  max-height: 550px;
+}
+th{
+  padding: 5px 35px;
+  /*padding: 5px 45px;*/
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+td{
+  border-top: 1px solid;
 }

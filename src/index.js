@@ -3,11 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import TotalConfirmed from "./CovidMap/TotalConfirmed";
+import CountryData from "./CovidMap/CountryData";
+import Grafic from "./CovidMap/Grafic";
+import SearchCountry from "./CovidMap/SearchCountry";
+import SearchTable from "./CovidMap/SearchTable";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <div className="container">
+        <h1>Covid-19 Map</h1>
+        <SearchTable />
+        {/*<SearchCountry />*/}
+        {/*<CountryData />*/}
+        {/*<TotalConfirmed />*/}
+        {/*<Grafic />*/}
+    </div>,
   document.getElementById('root')
 );
 
