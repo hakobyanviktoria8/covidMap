@@ -17,8 +17,9 @@ class Running extends React.Component{
         countries.map(x => !groupedCountries.hasOwnProperty(x.countryRegion) ?
             groupedCountries[x.countryRegion] = [x] : groupedCountries[x.countryRegion].push(x));
         let totalGroupedCountries = Object.values(groupedCountries);
-        // console.log(totalGroupedCountries);
-        totalGroupedCountries = totalGroupedCountries.map(x => x.length === 1 ? x[0]
+        console.log(totalGroupedCountries);
+
+        let oneCountries = totalGroupedCountries.map(x => x.length === 1 ? x[0]
             : x = {
                 countryRegion : x[0].countryRegion,
                 confirmed : x.map(c => c.confirmed).reduce((a,b)=>a+b),
@@ -26,10 +27,11 @@ class Running extends React.Component{
                 active :  x.map(c => c.active).reduce((a,b)=>a+b),
                 deaths :  x.map(c => c.deaths).reduce((a,b)=>a+b),
             });
-        totalGroupedCountries = totalGroupedCountries.sort((a,b)=>b.confirmed-a.confirmed);
+        oneCountries = oneCountries.sort((a,b)=>b.confirmed-a.confirmed);
         this.setState(
-            {countries: totalGroupedCountries}
+            {countries: oneCountries}
         );
+        console.log(oneCountries)
     };
     render(){
         console.log("render");

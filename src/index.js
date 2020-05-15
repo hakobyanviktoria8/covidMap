@@ -1,14 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import SearchTable from "./CovidMap/SearchTable";
+import CountryTable from "./CovidMap/Table";
+import Grafic from "./CovidMap/Grafic";
+import { Container, Row, Col } from 'reactstrap';
+import SearchCountry from "./CovidMap/SearchCountry";
+
 
 ReactDOM.render(
-    <div className="container">
-        <h1>Covid-19 Map</h1>
-        <SearchTable />
-    </div>,
+        <Container className="themed-container" fluid={true}>
+            <Row className ="bgColor">
+                <Col xs="8"><h1>COVID-19 Dashboard by the Center for Systems Science</h1></Col>
+                <Col xs="3"><SearchCountry /></Col>
+            </Row>
+            <Row>
+                <Col xs="6"><CountryTable /></Col>
+                <Col xs="6"><Grafic /></Col>
+            </Row>
+        </Container>,
   document.getElementById('root')
 );
 

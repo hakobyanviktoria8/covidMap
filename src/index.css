@@ -4,19 +4,14 @@
   box-sizing: border-box;
 
 }
-.container{
-  background-color: #cdcdcd;
-  height: 100vh;
-  padding: 10px;
-  position: relative;
+.bgColor{
+  background-color: #4c4c4c;
 }
 h1{
   text-align: center;
-  background-color: #4c4c4c;
   color: white;
   font-size: 35px;
   padding: 10px;
-  border: 1px solid white;
   margin: 5px;
 }
 table, td, th{
@@ -42,7 +37,7 @@ th{
 }
 thead{
   position: fixed;
-  top: 83px;
+  top: 80px;
   z-index: 2;
   margin-top: 0;
   border-top: 10px solid  #4c4c4c;
@@ -55,8 +50,12 @@ thead{
   background-color: #4c4c4c;
   overflow-y: auto;
   position: relative;
+  display: inline-block;
 }
 tbody{
   position: absolute;
-  top: 60px;
+  top: 65px;
+}
+.grafic{
+  display: inline-block;
 }
