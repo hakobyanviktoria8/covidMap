@@ -8,16 +8,26 @@ import Grafic from "./CovidMap/Grafic";
 import { Container, Row, Col } from 'reactstrap';
 import SearchCountry from "./CovidMap/SearchCountry";
 
+import  { Component } from 'react';
+import { render } from 'react-dom';
+import { AgGridReact } from 'ag-grid-react';
+
+import 'ag-grid-community/dist/styles/ag-grid.css';
+import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
+import AppSevagir from "./CovidMap/sevagir";
+import Running from "./CovidMap/Running";
 
 ReactDOM.render(
         <Container className="themed-container" fluid={true}>
             <Row className ="bgColor">
-                <Col xs="8"><h1>COVID-19 Dashboard by the Center for Systems Science</h1></Col>
-                <Col xs="3"><SearchCountry /></Col>
+                <Col xs="12"><h1>COVID-19 Dashboard by the Center for Systems Science</h1></Col>
+                {/*<Col xs="3"><SearchCountry /></Col>*/}
             </Row>
             <Row>
-                <Col xs="6"><CountryTable /></Col>
-                <Col xs="6"><Grafic /></Col>
+                <Running />
+                {/*<Col xs="7"><CountryTable /></Col>*/}
+                {/*<Col xs="5"><Grafic /></Col>*/}
+                {/*<Col xs="12"><AppSevagir /></Col>*/}
             </Row>
         </Container>,
   document.getElementById('root')

@@ -8,12 +8,13 @@ class CountryTable extends React.Component{
             <table>
                 <thead>
                 <tr>
-                    <th style={{width:"45px"}}>N</th>
-                    <th style={{width:"280px"}}>Country</th>
+                    <th style={{width:"50px"}}>N</th>
+                    <th style={{width:"200px"}}>Country</th>
                     <th style={{width:"100px"}}>Confirmed</th>
                     <th style={{width:"100px"}}>Recovered</th>
-                    <th style={{width:"100px"}}>Active</th>
-                    <th style={{width:"100px"}}>Deaths</th>
+                    <th style={{width:"90px"}}>Active</th>
+                    <th style={{width:"90px"}}>Deaths</th>
+                    <th style={{width:"150px"}}>Last Update</th>
                 </tr>
                 </thead>
                 <Running />
