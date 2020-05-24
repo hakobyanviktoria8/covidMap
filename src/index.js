@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import CountryTable from "./CovidMap/Table";
-import Grafic from "./CovidMap/Grafic";
+// import Grafic from "./CovidMap/Grafic";
 import { Container, Row, Col } from 'reactstrap';
 import SearchCountry from "./CovidMap/SearchCountry";
 

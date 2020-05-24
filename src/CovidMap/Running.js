@@ -9,6 +9,8 @@ import 'ag-grid-community/dist/styles/ag-theme-alpine.css';
 import frenchStrings from 'react-timeago/lib/language-strings/fr';
 import buildFormatter from 'react-timeago/lib/formatters/buildFormatter';
 import 'ag-grid-enterprise';
+import { Button } from 'reactstrap';
+
 
 class Running extends React.Component{
     constructor(props){
@@ -21,13 +23,17 @@ class Running extends React.Component{
             columnDefs: [
                 // { headerName: "N", field: "n" },  rowGroup:true
                 { headerName: "Country", field: "countryRegion", sortable: true, filter: true, checkboxSelection: true},
-                { headerName: "Confirmed", field: "confirmed", sortable: true, filter: true},
-                { headerName: "Recovered", field: "recovered", sortable: true, filter: true},
-                { headerName: "Active", field: "active", sortable: true, filter: true},
-                { headerName: "Deaths", field: "deaths", sortable: true, filter: true},
-                { headerName: "Last Update", field: "lastUpdate", sortable: true, filter: true},
+                { headerName: "Confirmed", field: "confirmed", sortable: true, filter: true, width:150},
+                { headerName: "Recovered", field: "recovered", sortable: true, filter: true, width:150},
+                { headerName: "Active", field: "active", sortable: true, filter: true, width:150},
+                { headerName: "Deaths", field: "deaths", sortable: true, filter: true, width:150},
+                { headerName: "Last Update", field: "lastUpdate", sortable: true, filter: true, width:150,
+                    cellRendererFramework: function (props) {
+                        return <TimeAgo date={props.value} />;
+                    }
+                },
             ],
-            rowData: []
+            rowData: [],
         }
     }
     getCountries = async () => {
@@ -51,11 +57,12 @@ class Running extends React.Component{
                 recovered :  x.map(c => c.recovered).reduce((a,b)=>a+b),
                 active :  x.map(c => c.active).reduce((a,b)=>a+b),
                 deaths :  x.map(c => c.deaths).reduce((a,b)=>a+b),
-                lastUpdate : x[0].lastUpdate ,
+                lastUpdate : x[0].lastUpdate,
             });
         // console.log(oneCountries);
         oneCountries = oneCountries.sort((a,b)=>b.confirmed-a.confirmed);
         // console.log(oneCountries[0].lastUpdate);
+
         // oneCountries.lastUpdate = oneCountries.map(x => x.lastUpdate = (<TimeAgo date={x.lastUpdate} />).toString() );
         // console.log(oneCountries);
         // console.log(this.state.rowData[0]);
@@ -78,7 +85,9 @@ class Running extends React.Component{
                 {/*<TimeAgo date='Feb 1, 1966' />*/}
                 {/*<TimeAgo date={new Date(1590165163000)} />*/}
                 {/*<TimeAgo date={1590165163000} />*/}
-                <button onClick={this.onClickBtn}>Get Selected Country</button>
+
+                <Button style={{margin: "10px 40%"}} color="secondary" onClick={this.onClickBtn}>Get Selected Country</Button>{' '}
+
                 <AgGridReact
                     columnDefs={this.state.columnDefs}
                     rowData={this.state.rowData}
