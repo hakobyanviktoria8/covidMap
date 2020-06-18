@@ -69,7 +69,7 @@ class Running extends React.Component{
         this.setState(
             {rowData: oneCountries}
         );
-        // console.log(this.state.rowData)
+        console.log("rowData_____________________",this.state.rowData)
     };
     onClickBtn=()=>{
         const selectedCountries = this.gridApi.getSelectedNodes();
